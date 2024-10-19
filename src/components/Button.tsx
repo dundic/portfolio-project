@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const SectionTitle = styled.h2`
-    color: green;
+export const Button = styled.button`
     text-align: center;
 
 `
