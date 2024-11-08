@@ -1,21 +1,34 @@
 import React from 'react';
-import {FlexWrapper} from "../FlexWrapper";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import './../../styles/slider.css'
 import {S} from './Slider_Styles'
 
-export const Slider: React.FC = () => {
+type SlidePropsType = {
+    text: string,
+    userName: string
+}
+
+const Slide = (props: SlidePropsType) => {
     return (
-            <S.Slider>
-                <FlexWrapper>
-                <S.Slide>
-                    <S.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur cumque illum, molestiae nesciunt quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque laborum nam nihil numquam porro, quod ratione vitae voluptates?</S.Text>
-                    <S.Name>@ivan ivanov</S.Name>
-                </S.Slide>
-                </FlexWrapper>
-                <S.Pagination>
-                    <span> </span>
-                    <span className={"active"}> </span>
-                    <span> </span>
-                </S.Pagination>
-            </S.Slider>
-    );
-};
+            <S.Slide>
+                <S.Text>{props.text}</S.Text>
+                <S.Name>{props.userName}</S.Name>
+            </S.Slide>
+    )
+}
+
+const items = [
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur cumque illum, molestiae nesciunt quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque laborum nam nihil numquam porro, quod ratione vitae voluptates?"} userName={"ivan ivanow"}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur cumque illum, molestiae nesciunt quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque laborum nam nihil numquam porro, quod ratione vitae voluptates?"} userName={"garry gudini"}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur cumque illum, molestiae nesciunt quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque laborum nam nihil numquam porro, quod ratione vitae voluptates?"} userName={"michael jordan"}/>
+];
+
+export const Slider = () => (
+        <S.Slider>
+        <AliceCarousel
+                mouseTracking
+                items={items}
+        />
+        </S.Slider>
+);
