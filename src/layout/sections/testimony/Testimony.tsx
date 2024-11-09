@@ -10,7 +10,7 @@ import {S} from "../skills/Skills_Styles"
 
 export const Testimony: React.FC = () => {
     return (
-            <StyledTestimony>
+            <StyledTestimony id={'testimony'}>
                 <Container>
                     <SectionTitle>Testimony</SectionTitle>
                     <FlexWrapper direction={'column'} align={'center'}>
@@ -27,6 +27,7 @@ export const Testimony: React.FC = () => {
 const StyledTestimony = styled.section`
     min-height: 50vh;
     background-color: #aeb9ff;
+    position: relative;
     
     ${S.IconWrapper} {
         margin: 42px 0 72px;
