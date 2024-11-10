@@ -27,7 +27,7 @@ const SocialIconLink = styled.a`
     background-color: rgba(255, 255, 255, 0.1);
     width: 35px;
     height: 35px;
-
+    transition: ${theme.animations.transition};
     display: flex;
     justify-content: center;
     align-items: center;
